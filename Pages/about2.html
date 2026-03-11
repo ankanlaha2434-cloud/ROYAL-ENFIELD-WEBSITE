@@ -1,271 +1,504 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Royal Enfield | Premium About</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal Enfield | Premium About</title>
 
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family: 'Segoe UI', sans-serif;
-}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 
-body{
-    background:black;
-    color:white;
-    scroll-behavior:smooth;
-}
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
 
-/* ================= HERO SECTION ================= */
+        body {
+            background: black;
+            color: white;
+            scroll-behavior: smooth;
+        }
 
-.hero{
-    position:relative;
-    height:100vh;
-    overflow:hidden;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-}
+        /* HERO */
 
-.hero video{
-    position:absolute;
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    top:0;
-    left:0;
-}
+        .hero {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
 
-.hero::after{
-    content:"";
-    position:absolute;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.7);
-    top:0;
-    left:0;
-}
+        .hero video {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            top: 0;
+            left: 0;
+        }
 
-.hero-content{
-    position:relative;
-    z-index:2;
-    animation:fadeIn 2s ease;
-}
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            top: 0;
+            left: 0;
+        }
 
-@keyframes fadeIn{
-    from{opacity:0; transform:translateY(40px);}
-    to{opacity:1; transform:translateY(0);}
-}
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            animation: fadeIn 2s ease;
+        }
 
-.hero-content h1{
-    font-size:60px;
-    letter-spacing:5px;
-    background:linear-gradient(90deg,#800000,#b8860b);
-    background-clip:text;
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-}
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
 
-.hero-content p{
-    margin-top:20px;
-    font-size:20px;
-    max-width:700px;
-    color:#ddd;
-    margin-left:auto;
-    margin-right:auto;
-}
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-/* Explore Button */
-.btn{
-    display:inline-block;
-    margin-top:30px;
-    padding:12px 30px;
-    border:2px solid #b8860b;
-    color:#b8860b;
-    text-decoration:none;
-    transition:0.4s;
-}
+        .hero-content h1 {
+            font-size: 60px;
+            letter-spacing: 5px;
+            background: linear-gradient(90deg, #800000, #b8860b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-.btn:hover{
-    background:#b8860b;
-    color:black;
-}
+        .hero-content p {
+            margin-top: 20px;
+            font-size: 20px;
+            max-width: 700px;
+            color: #ddd;
+            margin-left: auto;
+            margin-right: auto;
+        }
 
-/* Scroll Indicator */
-.scroll{
-    position:absolute;
-    bottom:30px;
-    left:50%;
-    transform:translateX(-50%);
-    font-size:14px;
-    animation:bounce 2s infinite;
-}
+        .btn-explore {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 30px;
+            border: 2px solid #b8860b;
+            color: #b8860b;
+            text-decoration: none;
+            transition: 0.4s;
+        }
 
-@keyframes bounce{
-    0%,20%,50%,80%,100%{transform:translate(-50%,0);}
-    40%{transform:translate(-50%,-10px);}
-    60%{transform:translate(-50%,-5px);}
-}
+        .btn-explore:hover {
+            background: #b8860b;
+            color: black;
+        }
 
-/* ================= ABOUT SECTION ================= */
+        /* SCROLL */
 
-.about{
-    padding:100px 10%;
-    background:#111;
-    text-align:center;
-}
+        .scroll {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 14px;
+            animation: bounce 2s infinite;
+        }
 
-.about h2{
-    font-size:40px;
-    margin-bottom:30px;
-    color:#b8860b;
-}
+        @keyframes bounce {
 
-.about p{
-    max-width:800px;
-    margin:auto;
-    line-height:1.8;
-    color:#ccc;
-}
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translate(-50%, 0);
+            }
 
-/* ================= MODELS SECTION ================= */
+            40% {
+                transform: translate(-50%, -10px);
+            }
 
-.models{
-    padding:100px 8%;
-    background:black;
-}
+            60% {
+                transform: translate(-50%, -5px);
+            }
 
-.models h2{
-    text-align:center;
-    margin-bottom:60px;
-    font-size:40px;
-    color:#b8860b;
-}
+        }
 
-.model-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:30px;
-}
+        /* ABOUT */
 
-.card{
-    position:relative;
-    overflow:hidden;
-    border-radius:10px;
-    cursor:pointer;
-}
+        .about {
+            padding: 100px 10%;
+            background: #111;
+            text-align: center;
+        }
 
-.card img{
-    width:100%;
-    height:350px;
-    object-fit:cover;
-    transition:0.6s;
-}
+        .about h2 {
+            font-size: 40px;
+            margin-bottom: 30px;
+            color: #b8860b;
+        }
 
-.card:hover img{
-    transform:scale(1.1);
-}
+        .about p {
+            max-width: 800px;
+            margin: auto;
+            line-height: 1.8;
+            color: #ccc;
+        }
 
-.card-content{
-    position:absolute;
-    bottom:0;
-    width:100%;
-    padding:20px;
-    background:linear-gradient(to top, rgba(0,0,0,0.9), transparent);
-}
+        /* LEGACY */
 
-.card-content h3{
-    margin-bottom:5px;
-}
+        .legacy {
+            padding: 100px 10%;
+            background: #000;
+            text-align: center;
+        }
 
-/* ================= FOOTER ================= */
+        .legacy h2 {
+            font-size: 40px;
+            margin-bottom: 60px;
+            color: #b8860b;
+        }
 
-footer{
-    text-align:center;
-    padding:25px;
-    background:#111;
-    color:#777;
-}
+        .timeline {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+        }
 
-/* Responsive */
-@media(max-width:768px){
-    .hero-content h1{
-        font-size:38px;
-    }
-}
-</style>
+        .timeline-item {
+            background: #111;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 3px solid #b8860b;
+            transition: 0.4s;
+        }
+
+        .timeline-item:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+        }
+
+        .timeline-item h3 {
+            color: #b8860b;
+            margin-bottom: 10px;
+        }
+
+        /* MODELS */
+
+        .models {
+            padding: 100px 8%;
+            background: black;
+        }
+
+        .models h2 {
+            text-align: center;
+            margin-bottom: 60px;
+            font-size: 40px;
+            color: #b8860b;
+        }
+
+        .model-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .card img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            transition: 0.6s;
+        }
+
+        .card:hover img {
+            transform: scale(1.1);
+        }
+
+        .card-content {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+        }
+
+       /* Footer */
+        .footer {
+            background: #111;
+            color: white;
+            padding: 50px 0;
+            margin-top: 60px;
+        }
+
+        .footer h5 {
+            color: #b8860b;
+            margin-bottom: 20px;
+        }
+
+        .footer a {
+            color: #ccc;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 8px;
+            transition: 0.3s;
+        }
+
+        .footer a:hover {
+            color: #b8860b;
+            transform: translateX(5px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid #333;
+            padding-top: 20px;
+            margin-top: 30px;
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        .container-fluid {
+            background-color: #1a1919;
+        }
+        @media(max-width:768px) {
+
+            .hero-content h1 {
+                font-size: 38px;
+            }
+
+        }
+    </style>
 </head>
 
 <body>
 
-<!-- HERO -->
-<section class="hero">
-    <video autoplay muted loop playsinline>
-        <source src="./..//image royal/benner videos.mp4" type="video/mp4">
-    </video>
+    <!-- NAVBAR -->
 
-    <div class="hero-content">
-        <h1>ROYAL ENFIELD</h1>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+
+        <div class="container-fluid">
+
+            <a class="navbar-brand" href="#">
+                <img src="./../image royal/LOGO-ROYAL-ENFIELD/1e3602164499917.63f797d39c88fmabbbbbbb.jpg"
+                    style="height:50px;">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/index.html">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">About</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                            Models
+                        </a>
+
+                        <ul class="dropdown-menu">
+
+                            <li>
+                                <a class="dropdown-item" href="../model/model350.html">350cc</a>
+                            </li>
+
+                            <li>
+                                <a class="dropdown-item" href="../model/model440.html">440cc</a>
+                            </li>
+
+                            <li>
+                                <a class="dropdown-item" href="../model/model450.html">450cc</a>
+                            </li>
+
+                            <li>
+                                <a class="dropdown-item" href="../model/model650.html">650cc</a>
+                            </li>
+
+                        </ul>
+
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <video autoplay muted loop playsinline>
+            <source src="./../image royal/ABOUT-PAGE-PICS-AND-VIDEOS/ABOUT-PAGE-BANNER-VIDEO.mp4" type="video/mp4">
+        </video>
+
+        <div class="hero-content">
+            <h1>ROYAL ENFIELD</h1>
+            <p>
+                Since 1901 • Made Like A Gun <br>
+                Built on heritage. Powered by passion.
+            </p>
+
+            <a href="#models" class="btn-explore">Explore</a>
+        </div>
+
+        <div class="scroll">Scroll Down ↓</div>
+
+    </section>
+
+    <!-- ABOUT -->
+
+    <section class="about">
+
+        <h2>About Our Legacy</h2>
+
         <p>
-            Since 1901 • Made Like A Gun <br>
-            Built on heritage. Powered by passion.
+            Royal Enfield stands for timeless design, unmatched torque and pure riding experience.
+            From city streets to mountain roads, it is built for riders who seek emotion, adventure
+            and brotherhood. For more than a century Royal Enfield motorcycles have inspired riders
+            around the world with classic styling, rugged reliability and powerful performance.
         </p>
-        <a href="#models" class="btn">Explore Models</a>
+
+    </section>
+
+    <!-- LEGACY -->
+
+    <section class="legacy">
+
+        <h2>Legacy Since 1901</h2>
+
+        <div class="timeline">
+
+            <div class="timeline-item">
+                <h3>1901</h3>
+                <p>First Royal Enfield motorcycle built in Redditch, England.</p>
+            </div>
+
+            <div class="timeline-item">
+                <h3>1955</h3>
+                <p>Royal Enfield manufacturing begins in India with the legendary Bullet.</p>
+            </div>
+
+            <div class="timeline-item">
+                <h3>1994</h3>
+                <p>Eicher Motors acquires Royal Enfield and revives the historic brand.</p>
+            </div>
+
+            <div class="timeline-item">
+                <h3>2018</h3>
+                <p>The revolutionary 650 twin platform is introduced worldwide.</p>
+            </div>
+
+            <div class="timeline-item">
+                <h3>Today</h3>
+                <p>Global leader in mid-size motorcycles inspiring millions of riders.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- MODELS -->
+
+    <section class="models" id="models">
+
+        <h2>The Royal Enfield World</h2>
+
+        <div class="model-grid">
+
+            <div class="card">
+                <img src="./../image royal/ABOUT-PAGE-1901-NOW/adventure.jpg">
+                <div class="card-content">
+                    <h3>Adventure</h3>
+                    <p>Explore mountains and unknown roads.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="./../image royal/ABOUT-PAGE-1901-NOW/urban.jpg">
+                <div class="card-content">
+                    <h3>Urban Riding</h3>
+                    <p>Modern roadster attitude built for cities.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img
+                    src="https://www.royalenfield.com/content/dam/royal-enfield/united-kingdom/support/benefits-of-ownership/desktop/service_your_bike.png">
+                <div class="card-content">
+                    <h3>Services</h3>
+                    <p>World-class support for every rider.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-4">
+                <h5>About Royal Enfield</h5>
+                <p>Built on legacy since 1901. Timeless design and powerful performance.</p>
+            </div>
+
+            <div class="col-md-4">
+                <h5>Quick Links</h5>
+                <a href="#">Home</a>
+                <a href="#">Models</a>
+                <a href="#">About Us</a>
+                <a href="#">Contact</a>
+            </div>
+
+            <div class="col-md-4">
+                <h5>Contact</h5>
+                <p>Email: support@royalenfield.com</p>
+                <p>Phone: +91 9876543210</p>
+                <p>India</p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            © 2026 Royal Enfield Inspired Project | Designed by Ankan Laha
+        </div>
+
     </div>
-
-    <div class="scroll">Scroll Down ↓</div>
-</section>
-
-<!-- ABOUT -->
-<section class="about">
-    <h2>About Our Legacy</h2>
-    <p>
-        Royal Enfield stands for timeless design, unmatched torque
-        and pure riding experience. From city streets to mountain roads,
-        it is built for riders who seek emotion, adventure and brotherhood.
-    </p>
-</section>
-
-<!-- MODELS -->
-<section class="models" id="models">
-    <h2>From 1901</h2>
-
-    <div class="model-grid">
-
-        <div class="card">
-            <img src="./image royal/hq720.jpg" alt="">
-            <div class="card-content">
-                <h3></h3>
-                <p>– Not just built, but born legendary.</p>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="" alt="">
-            <div class="card-content">
-                <h3>1901-TILL NOW</h3>
-                <p>Modern roadster attitude</p>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="" alt="">
-            <div class="card-content">
-                <h3>SERVICES</h3>
-                <p>Built for adventure</p>
-            </div>
-        </div>
-
-    </div>
-</section>
-
-<footer>
-© 2026 Royal Enfield | Heritage Meets Horsepower
 </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"></script>
+
 </body>
+
 </html>

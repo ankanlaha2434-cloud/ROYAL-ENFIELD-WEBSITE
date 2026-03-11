@@ -2,145 +2,305 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Royal Enfield 450cc Models</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Royal Enfield 450cc Models</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', sans-serif;
-        }
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 
-        body {
-            background:
-                linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.85)),
-                url('./images/background.jpg') no-repeat center center/cover;
-            min-height: 100vh;
-            color: white;
-            padding: 60px 20px;
-        }
+<style>
 
-        h1 {
-            text-align: center;
-            font-size: 45px;
-            letter-spacing: 3px;
-            margin-bottom: 50px;
-            background: white;
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
 
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            max-width: 1200px;
-            margin: auto;
-        }
+body{
+background:
+linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.85)),
+url('./images/background.jpg') no-repeat center center/cover;
+min-height:100vh;
+color:white;
+}
 
-        .card {
-            background: rgba(255, 255, 255, 0.08);
-            border-radius: 20px;
-            overflow: hidden;
-            backdrop-filter: blur(15px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-            transition: 0.4s ease;
-        }
+/* NAVBAR */
 
-        .card:hover {
-            transform: translateY(-12px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
-        }
+.navbar{
+backdrop-filter:blur(8px);
+border-bottom:1px solid rgba(255,255,255,0.1);
+}
 
-        .card img {
-            width: 100%;
-            height: 230px;
-            object-fit: cover;
-        }
+.nav-link:hover{
+color:#d4af37 !important;
+}
 
-        .card-content {
-            padding: 25px;
-            text-align: center;
-        }
+/* HEADING */
 
-        .card-content h2 {
-            margin-bottom: 10px;
-            font-size: 22px;
-        }
+h1{
+text-align:center;
+font-size:48px;
+letter-spacing:4px;
+margin:70px 0 60px;
+font-weight:600;
+background:linear-gradient(90deg,#ffffff,#d4af37);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
 
-        .card-content p {
-            font-size: 14px;
-            color: #ccc;
-            margin-bottom: 20px;
-        }
+/* CARD GRID */
 
-        .btn {
-            display: inline-block;
-            padding: 10px 25px;
-            border-radius: 30px;
-            background: white;
-            text-decoration: none;
-            color: rgb(0, 0, 0);
-            font-size: 14px;
-            transition: 0.3s;
-        }
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:35px;
+max-width:1200px;
+margin:auto;
+padding:0 20px;
+}
 
-        .btn:hover {
-            opacity: 0.8;
-        }
+/* CARD DESIGN */
 
-        footer {
-            text-align: center;
-            margin-top: 60px;
-            font-size: 14px;
-            color: #aaa;
-        }
+.card{
+background:rgba(255,255,255,0.05);
+border-radius:18px;
+overflow:hidden;
+backdrop-filter:blur(10px);
+border:1px solid rgba(255,255,255,0.08);
+transition:all 0.4s ease;
+}
 
-       
-    </style>
+.card:hover{
+transform:translateY(-12px) scale(1.02);
+box-shadow:0 20px 45px rgba(0,0,0,0.7);
+}
+
+.card img{
+width:100%;
+height:230px;
+object-fit:cover;
+transition:0.5s;
+}
+
+.card:hover img{
+transform:scale(1.1);
+}
+
+/* CARD CONTENT */
+
+.card-content{
+padding:25px;
+text-align:center;
+}
+
+.card-content h2{
+font-size:22px;
+margin-bottom:10px;
+}
+
+.card-content p{
+font-size:14px;
+color:#bbb;
+margin-bottom:20px;
+}
+
+/* BUTTON */
+
+.btn-explore{
+display:inline-block;
+padding:10px 28px;
+border-radius:30px;
+background:linear-gradient(90deg,#d4af37,#ffffff);
+text-decoration:none;
+color:#000;
+font-size:14px;
+font-weight:600;
+transition:0.3s;
+}
+
+.btn-explore:hover{
+transform:scale(1.05);
+}
+
+/* FOOTER */
+
+.footer{
+background:#0d0d0d;
+padding:60px 20px;
+margin-top:80px;
+}
+
+.footer h4{
+color:#d4af37;
+margin-bottom:20px;
+}
+
+.footer p,
+.footer a{
+color:#bbb;
+font-size:14px;
+text-decoration:none;
+}
+
+.footer a:hover{
+color:#d4af37;
+}
+
+.footer-bottom{
+text-align:center;
+border-top:1px solid #222;
+padding-top:20px;
+margin-top:40px;
+font-size:13px;
+color:#777;
+}
+
+</style>
+
 </head>
 
 <body>
 
-    <h1>450cc Series</h1>
+<!-- NAVBAR -->
 
-    <section class="cards">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
 
-        <div class="card">
-            <img src="./..//image royal/450cc/himalayan-450.webp" alt="HIMALAYAN 350">
-            <div class="card-content">
-                <h2>HIMALAYAN 450</h2>
-                <p>Built for the mountains. Born for the wild.</p>
-                <a href="#" class="btn">Explore</a>
-            </div>
-        </div>
+<div class="container-fluid">
 
-        <div class="card">
-            <img src="./..//image royal/450cc/guerrilla-450.webp" alt="GUERRILLA 450">
-            <div class="card-content">
-                <h2>GUERRILLA 450</h2>
-                <p>Urban jungle. Guerrilla rules.</p>
-                <a href="#" class="btn">Explore</a>
-            </div>
-        </div>
+<a class="navbar-brand" href="#">
+<img src="./../image royal/LOGO-ROYAL-ENFIELD/1e3602164499917.63f797d39c88fmabbbbbbb.jpg" style="height:50px;">
+</a>
 
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+<span class="navbar-toggler-icon"></span>
+</button>
 
-        <div class="card">
-            <img src="./..//image royal/450cc/new.jpg" alt="NEW 450">
-            <div class="card-content">
-                <h2>The next ride is on its way.</h2>
-                <p>Stay tuned...</p>
-                <a href="#" class="btn">Explore</a>
-            </div>
-        </div>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
 
+<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
-    </section>
+<li class="nav-item">
+<a class="nav-link" href="/index.html">Home</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link active" href="#">About</a>
+</li>
+
+<li class="nav-item dropdown">
+
+<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+Models
+</a>
+
+<ul class="dropdown-menu">
+
+<li>
+<a class="dropdown-item" href="../model/model350.html">350cc</a>
+</li>
+
+<li>
+<a class="dropdown-item" href="../model/model440.html">440cc</a>
+</li>
+
+<li>
+<a class="dropdown-item" href="../model/model450.html">450cc</a>
+</li>
+
+<li>
+<a class="dropdown-item" href="../model/model650.html">650cc</a>
+</li>
+
+</ul>
+
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</nav>
+
+<h1>450cc Series</h1>
+
+<!-- CARDS -->
+
+<section class="cards">
+
+<div class="card">
+<img src="./../image royal/ALL-MODELS-PICS/450cc/HIMALAYAN450REMOVE.png">
+<div class="card-content">
+<h2>Himalayan 450</h2>
+<p>Built for the mountains. Born for the wild.</p>
+<a href="#" class="btn-explore">Explore</a>
+</div>
+</div>
+
+<div class="card">
+<img src="./../image royal/ALL-MODELS-PICS/450cc/GUERRILLA450REMOVE.png">
+<div class="card-content">
+<h2>Guerrilla 450</h2>
+<p>Urban jungle. Guerrilla rules.</p>
+<a href="#" class="btn-explore">Explore</a>
+</div>
+</div>
+
+<div class="card">
+<img src="./../image royal/ALL-MODELS-PICS/450cc/new450remove.png">
+<div class="card-content">
+<h2>The Next Ride</h2>
+<p>Stay tuned...</p>
+<a href="#" class="btn-explore">Explore</a>
+</div>
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+<div class="container">
+
+<div class="row">
+
+<div class="col-md-4">
+<h4>Royal Enfield</h4>
+<p>Pure motorcycling since 1901. Built for riders who crave adventure, freedom and the open road.</p>
+</div>
+
+<div class="col-md-4">
+<h4>Quick Links</h4>
+<a href="#">Home</a><br>
+<a href="#">About</a><br>
+<a href="#">Models</a><br>
+<a href="#">Contact</a>
+</div>
+
+<div class="col-md-4">
+<h4>Follow Us</h4>
+<p>Instagram</p>
+<p>Facebook</p>
+<p>YouTube</p>
+<p>Twitter</p>
+</div>
+
+</div>
+
+<div class="footer-bottom">
+© 2026 Royal Enfield Inspired Project | Designed by Ankan Laha
+</div>
+
+</div>
+
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"></script>
 
 </body>
-
 </html>
+
