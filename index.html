@@ -62,8 +62,12 @@
         }
 
         .card img {
-            height: 200px;
-            object-fit: cover;
+            height: auto;
+            object-fit: contain;
+            width: 600px;
+            display: block;
+            margin: auto;
+
         }
 
         .carousel-control-prev-icon,
@@ -232,71 +236,8 @@
             background-color: #1a1919;
         }
 
-        /* Bike Slider */
 
-        .bike-slider {
-            position: relative;
-            max-width: 900px;
-            margin: auto;
-            overflow: hidden;
-        }
 
-        .bike-slider input {
-            display: none;
-        }
-
-        .slides {
-            display: flex;
-            transition: 0.6s;
-        }
-
-        .bike {
-            min-width: 100%;
-            text-align: center;
-        }
-
-        .bike img {
-            width: 380px;
-            border-radius: 12px;
-        }
-
-        .bike p {
-            color: white;
-            margin-top: 10px;
-            font-size: 20px;
-        }
-
-        .nav label {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 40px;
-            color: #b8860b;
-            cursor: pointer;
-            padding: 10px;
-        }
-
-        .prev {
-            left: 10px;
-        }
-
-        .next {
-            right: 10px;
-        }
-
-        /* Slide movement */
-
-        #b1:checked~.slides {
-            transform: translateX(0);
-        }
-
-        #b2:checked~.slides {
-            transform: translateX(-100%);
-        }
-
-        #b3:checked~.slides {
-            transform: translateX(-200%);
-        }
 
         /* @media (max-width: 768px)  */
     </style>
@@ -379,179 +320,214 @@
 
 
     <!-- Motorcycles Slider -->
-    <h1><b>Motorcycles</b></h1>
 
-    <div class="bike-slider">
+    <div class="container my-5">
 
-        <input type="radio" name="bike" id="b1">
-        <input type="radio" name="bike" id="b2">
-        <input type="radio" name="bike" id="b3">
+        <h1><b>Motorcycles</b></h1>
 
-        <div class="slides">
+        <div id="bikeSlider" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2500">
 
-            <div class="bike">
-                <img src="./image royal/ALL-MODELS-PICS/350cc/classic350remove.png">
-                <p>Classic 350</p>
+            <div class="carousel-inner text-center">
+
+
+                <div class="carousel-item active">
+                    <img src="./image royal/ALL-MODELS-PICS/350cc/classic350remove.png" class="img-fluid"
+                        style="width:420px;">
+                    <h3>Classic 350</h3>
+                </div>
+
+
+                <div class="carousel-item">
+                    <img src="./image royal/ALL-MODELS-PICS/350cc/hunterremove.png" class="img-fluid"
+                        style="width:420px;">
+                    <h3>Hunter 350</h3>
+                </div>
+
+
+                <div class="carousel-item">
+                    <img src="./image royal/ALL-MODELS-PICS/350cc/meteor350revove.png" class="img-fluid"
+                        style="width:420px;">
+                    <h3>Meteor 350</h3>
+                </div>
+
+
+                <div class="carousel-item">
+                    <img src="./image royal/ALL-MODELS-PICS/450cc/himalayan450newww.png" class="img-fluid"
+                        style="width:420px;">
+                    <h3>Himalayan 450</h3>
+                </div>
+
+
+                <div class="carousel-item">
+                    <img src="./image royal/ALL-MODELS-PICS/650cc/b38c0b51-7f5f-4aaa-b0ca-f5f3aab5c30d.png" class="img-fluid"
+                        style="width:420px;">
+                    <h3>GT 650</h3>
+                </div>
+
+
+                <div class="carousel-item">
+                    <img src="./image royal/ALL-MODELS-PICS/440cc/scram440newwwww.png" class="img-fluid"
+                        style="width:420px;">
+                    <h3>Scram 440</h3>
+                </div>
+
+
             </div>
 
-            <div class="bike">
-                <img src="./image royal/ALL-MODELS-PICS/350cc/hunterremove.png">
-                <p>Hunter 350</p>
-            </div>
 
-            <div class="bike">
-                <img src="./image royal/ALL-MODELS-PICS/350cc/meteor350revove.png">
-                <p>Meteor 350</p>
-            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#bikeSlider" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
 
-        </div>
+            <button class="carousel-control-next" type="button" data-bs-target="#bikeSlider" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
 
-        <div class="nav">
-            <label for="b3" class="prev">❮</label>
-            <label for="b2" class="next">❯</label>
         </div>
 
     </div>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-</body>
-
-</html>
-
-<!-- Video -->
-<div class="video-section">
-    <video controls autoplay muted loop>
-        <source src="./image royal/HOME-PAGE-IMAGES-VIDEOS/WhatsApp Video 2026-02-15 at 12.32.24 PM.mp4"
-            type="video/mp4">
-    </video>
-</div>
-
-<!-- 2nd cards -->
-<div class="container my-5">
-
-    <div class="row g-4">
-
-        <!-- Left Big Card -->
-        <div class="col-lg-4">
-            <div class="re-card big-card">
-
-                <img src="./image royal/2nd-card-motoverse/explore.jpg">
-
-                <div class="re-overlay">
-                    <h3>Rides & Events</h3>
-                    <p>Discover a world of pure motorcycling.</p>
-                    <!-- <span class="explore">EXPLORE ></span> -->
-                </div>
-
-            </div>
-        </div>
 
 
-        <!-- Middle Cards -->
-        <div class="col-lg-4">
-
-            <div class="re-card small-card mb-4">
-
-                <img src="./image royal/2nd-card-motoverse/blog_photo_69aa7aa25d73a.jpg">
-
-                <div class="re-overlay">
-                    <h4>Rentals</h4>
-                </div>
-
-            </div>
 
 
-            <div class="re-card small-card">
-
-                <img src="./image royal/2nd-card-motoverse/tours.jpg">
-
-                <div class="re-overlay">
-                    <h4>Tours</h4>
-                </div>
-
-            </div>
-
-        </div>
 
 
-        <!-- Right Big Card -->
-        <div class="col-lg-4">
-            <div class="re-card big-card">
 
-                <img
-                    src="./image royal/2nd-card-motoverse/_0TIup5QyvZ7uDnxgMNhZoMIxroBdR0xTTunxB48rLaYDahDB040BZWShtn9T197LFy8WRhn3CHHyfqDKQqSEPjMCqsB7k1gz5Y38_zGgq8.jpg">
-
-                <div class="re-overlay">
-                    <h3>Motoverse</h3>
-                </div>
-
-            </div>
-        </div>
-
+    <!-- Video -->
+    <div class="video-section">
+        <video controls autoplay muted loop>
+            <source src="./image royal/HOME-PAGE-IMAGES-VIDEOS/WhatsApp Video 2026-02-15 at 12.32.24 PM.mp4"
+                type="video/mp4">
+        </video>
     </div>
-</div>
+
+    <!-- 2nd cards -->
+    <div class="container my-5">
+
+        <div class="row g-4">
+
+            <!-- Left Big Card -->
+            <div class="col-lg-4">
+                <div class="re-card big-card">
+
+                    <img src="./image royal/2nd-card-motoverse/explore.jpg">
+
+                    <div class="re-overlay">
+                        <h3>Rides & Events</h3>
+                        <p>Discover a world of pure motorcycling.</p>
+                        <!-- <span class="explore">EXPLORE ></span> -->
+                    </div>
+
+                </div>
+            </div>
 
 
+            <!-- Middle Cards -->
+            <div class="col-lg-4">
 
-<!-- Logo Section -->
-<div class="container my-5">
-    <div class="logo-section">
-        <img src="./image royal/LOGO-ROYAL-ENFIELD/Royal_Enfield_Logo_full.png" class="logo-img">
-        <div>
-            <h2 class="logo-title">ROYAL ENFIELD</h2>
-            <p class="logo-tagline">Since 1901 • <b>Made Like A Gun</b></p>
-            <h4 class="re-line">Timeless Design.</h4>
-            <h4 class="re-line">Iconic Sound.</h4>
-            <h4 class="re-line">Unmatched Road Presence.</h4>
-            <h4 class="re-line">Ride The Legacy.</h4>
-            <h4 class="re-line">Rule The Road.</h4>
+                <div class="re-card small-card mb-4">
+
+                    <img src="./image royal/2nd-card-motoverse/blog_photo_69aa7aa25d73a.jpg">
+
+                    <div class="re-overlay">
+                        <h4>Rentals</h4>
+                    </div>
+
+                </div>
+
+
+                <div class="re-card small-card">
+
+                    <img src="./image royal/2nd-card-motoverse/tours.jpg">
+
+                    <div class="re-overlay">
+                        <h4>Tours</h4>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Right Big Card -->
+            <div class="col-lg-4">
+                <div class="re-card big-card">
+
+                    <img
+                        src="./image royal/2nd-card-motoverse/_0TIup5QyvZ7uDnxgMNhZoMIxroBdR0xTTunxB48rLaYDahDB040BZWShtn9T197LFy8WRhn3CHHyfqDKQqSEPjMCqsB7k1gz5Y38_zGgq8.jpg">
+
+                    <div class="re-overlay">
+                        <h3>Motoverse</h3>
+                    </div>
+
+                </div>
+            </div>
+
         </div>
     </div>
-</div>
 
-<!-- Footer -->
-<footer class="footer">
-    <div class="container">
-        <div class="row">
 
-            <div class="col-md-4">
-                <h5>About Royal Enfield</h5>
-                <p>Built on legacy since 1901. Timeless design and powerful performance.</p>
+
+    <!-- Logo Section -->
+    <div class="container my-5">
+        <div class="logo-section">
+            <img src="./image royal/LOGO-ROYAL-ENFIELD/Royal_Enfield_Logo_full.png" class="logo-img">
+            <div>
+                <h2 class="logo-title">ROYAL ENFIELD</h2>
+                <p class="logo-tagline">Since 1901 • <b>Made Like A Gun</b></p>
+                <h4 class="re-line">Timeless Design.</h4>
+                <h4 class="re-line">Iconic Sound.</h4>
+                <h4 class="re-line">Unmatched Road Presence.</h4>
+                <h4 class="re-line">Ride The Legacy.</h4>
+                <h4 class="re-line">Rule The Road.</h4>
             </div>
-
-            <div class="col-md-4">
-                <h5>Quick Links</h5>
-                <a href="#">Home</a>
-                <a href="#">Models</a>
-                <a href="#">About Us</a>
-                <a href="#">Contact</a>
-            </div>
-
-            <div class="col-md-4">
-                <h5>Contact</h5>
-                <p>Email: support@royalenfield.com</p>
-                <p>Phone: +91 9876543210</p>
-                <p>India</p>
-            </div>
-
         </div>
-
-        <div class="footer-bottom">
-            © 2026 Royal Enfield Inspired Project | Designed by Ankan Laha
-        </div>
-
     </div>
-</footer>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-4">
+                    <h5>About Royal Enfield</h5>
+                    <p>Built on legacy since 1901. Timeless design and powerful performance.</p>
+                </div>
+
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <a href="#">Home</a>
+                    <a href="#">Models</a>
+                    <a href="#">About Us</a>
+                    <a href="#">Contact</a>
+                </div>
+
+                <div class="col-md-4">
+                    <h5>Contact</h5>
+                    <p>Email: support@royalenfield.com</p>
+                    <p>Phone: +91 9876543210</p>
+                    <p>India</p>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                © 2026 Royal Enfield Inspired Project | Designed by Ankan Laha
+            </div>
+
+        </div>
+    </footer>
 
 
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-    crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
-    integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
-    crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
+        integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
+        crossorigin="anonymous"></script>
 
 </body>
 

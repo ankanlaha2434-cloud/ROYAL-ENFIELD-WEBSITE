@@ -169,28 +169,64 @@
             color: #b8860b;
         }
 
+        /* TIMELINE */
+
         .timeline {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 30px;
+            position: relative;
         }
 
-        .timeline-item {
-            background: #111;
-            padding: 25px;
-            border-radius: 10px;
-            border-left: 3px solid #b8860b;
+        .timeline::before {
+            content: "";
+            position: absolute;
+            top: 30px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: #333;
+        }
+
+        .dot {
+            width: 16px;
+            height: 16px;
+            background: #b8860b;
+            border-radius: 50%;
+            margin: auto;
+            box-shadow: 0 0 10px #b8860b;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* CARD */
+
+        .history-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 20px;
+            border: 1px solid rgba(255, 193, 7, 0.4);
+            backdrop-filter: blur(10px);
             transition: 0.4s;
+            height: 100%;
         }
 
-        .timeline-item:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+        .history-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 30px #ffc10770;
         }
 
-        .timeline-item h3 {
-            color: #b8860b;
+        .history-card img {
+            width: 100%;
+            border-radius: 10px;
+            transition: 0.4s;
             margin-bottom: 10px;
+        }
+
+        .history-card img:hover {
+            transform: scale(1.05);
+        }
+
+        .history-card h2 {
+            color: #ffc107;
+            font-weight: bold;
         }
 
         /* MODELS */
@@ -237,9 +273,11 @@
             width: 100%;
             padding: 20px;
             background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+            color: white;
         }
 
-       /* Footer */
+        /* FOOTER */
+
         .footer {
             background: #111;
             color: white;
@@ -277,14 +315,14 @@
         .container-fluid {
             background-color: #1a1919;
         }
-        @media(max-width:768px) {
 
+        @media(max-width:768px) {
             .hero-content h1 {
                 font-size: 38px;
             }
-
         }
     </style>
+
 </head>
 
 <body>
@@ -325,21 +363,10 @@
 
                         <ul class="dropdown-menu">
 
-                            <li>
-                                <a class="dropdown-item" href="../model/model350.html">350cc</a>
-                            </li>
-
-                            <li>
-                                <a class="dropdown-item" href="../model/model440.html">440cc</a>
-                            </li>
-
-                            <li>
-                                <a class="dropdown-item" href="../model/model450.html">450cc</a>
-                            </li>
-
-                            <li>
-                                <a class="dropdown-item" href="../model/model650.html">650cc</a>
-                            </li>
+                            <li><a class="dropdown-item" href="../model/model350.html">350cc</a></li>
+                            <li><a class="dropdown-item" href="../model/model440.html">440cc</a></li>
+                            <li><a class="dropdown-item" href="../model/model450.html">450cc</a></li>
+                            <li><a class="dropdown-item" href="../model/model650.html">650cc</a></li>
 
                         </ul>
 
@@ -361,12 +388,14 @@
 
         <div class="hero-content">
             <h1>ROYAL ENFIELD</h1>
+
             <p>
                 Since 1901 • Made Like A Gun <br>
                 Built on heritage. Powered by passion.
             </p>
 
             <a href="#models" class="btn-explore">Explore</a>
+
         </div>
 
         <div class="scroll">Scroll Down ↓</div>
@@ -394,32 +423,107 @@
 
         <h2>Legacy Since 1901</h2>
 
-        <div class="timeline">
+        <div id="timelineCarousel" class="carousel slide" data-bs-ride="carousel">
 
-            <div class="timeline-item">
-                <h3>1901</h3>
-                <p>First Royal Enfield motorcycle built in Redditch, England.</p>
+            <div class="carousel-inner">
+
+                <div class="carousel-item active">
+
+                    <div class="row g-4 timeline text-center">
+
+                        <div class="col-md-3">
+                            <div class="dot mb-3"></div>
+                            <div class="history-card">
+                                <img src="./../image royal/ABOUT-PAGE-PICS-AND-VIDEOS/1901.webp">
+                                <h2>1901</h2>
+                                <p>First Royal Enfield motorcycle built in Redditch, England.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="dot mb-3"></div>
+                            <div class="history-card">
+                                <img src="./../image royal/ABOUT-PAGE-PICS-AND-VIDEOS/1955.webp">
+                                <h2>1955</h2>
+                                <p>Manufacturing begins in India with the legendary Bullet.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="dot mb-3"></div>
+                            <div class="history-card">
+                                <img src="./../image royal/ABOUT-PAGE-PICS-AND-VIDEOS/1994.webp">
+                                <h2>1994</h2>
+                                <p>Eicher Motors acquires Royal Enfield and revives the brand.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="dot mb-3"></div>
+                            <div class="history-card">
+                                <img src="./../image royal/ABOUT-PAGE-PICS-AND-VIDEOS/2008.webp">
+                                <h2>2008</h2>
+                                <p>The iconic Classic 350 becomes a global favorite.</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="carousel-item">
+
+                    <div class="row g-4 timeline text-center">
+
+                        <div class="col-md-3">
+                            <div class="dot mb-3"></div>
+                            <div class="history-card">
+                                <img src="./../image royal/ABOUT-PAGE-PICS-AND-VIDEOS/2016.webp">
+                                <h2>2016</h2>
+                                <p>Royal Enfield launches the Himalayan adventure motorcycle.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="dot mb-3"></div>
+                            <div class="history-card">
+                                <img src="./../image royal/ABOUT-PAGE-PICS-AND-VIDEOS/2018.webp">
+                                <h2>2018</h2>
+                                <p>The revolutionary 650 twin platform is introduced worldwide.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="dot mb-3"></div>
+                            <div class="history-card">
+                                <img src="./../image royal/ABOUT-PAGE-PICS-AND-VIDEOS/2023.webp">
+                                <h2>2023</h2>
+                                <p>New Himalayan 450 and modern platforms expand the brand globally.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="dot mb-3"></div>
+                            <div class="history-card">
+                                <img src="./../image royal/ABOUT-PAGE-PICS-AND-VIDEOS/2025.webp">
+                                <h2>2025</h2>
+                                <p>Royal Enfield continues global expansion and innovation.</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
             </div>
 
-            <div class="timeline-item">
-                <h3>1955</h3>
-                <p>Royal Enfield manufacturing begins in India with the legendary Bullet.</p>
-            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#timelineCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
 
-            <div class="timeline-item">
-                <h3>1994</h3>
-                <p>Eicher Motors acquires Royal Enfield and revives the historic brand.</p>
-            </div>
-
-            <div class="timeline-item">
-                <h3>2018</h3>
-                <p>The revolutionary 650 twin platform is introduced worldwide.</p>
-            </div>
-
-            <div class="timeline-item">
-                <h3>Today</h3>
-                <p>Global leader in mid-size motorcycles inspiring millions of riders.</p>
-            </div>
+            <button class="carousel-control-next" type="button" data-bs-target="#timelineCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
 
         </div>
 
@@ -462,42 +566,45 @@
 
     </section>
 
-    <!-- Footer -->
-<footer class="footer">
-    <div class="container">
-        <div class="row">
+    <!-- FOOTER -->
 
-            <div class="col-md-4">
-                <h5>About Royal Enfield</h5>
-                <p>Built on legacy since 1901. Timeless design and powerful performance.</p>
+    <footer class="footer">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-md-4">
+                    <h5>About Royal Enfield</h5>
+                    <p>Built on legacy since 1901. Timeless design and powerful performance.</p>
+                </div>
+
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <a href="#">Home</a>
+                    <a href="#">Models</a>
+                    <a href="#">About Us</a>
+                    <a href="#">Contact</a>
+                </div>
+
+                <div class="col-md-4">
+                    <h5>Contact</h5>
+                    <p>Email: support@royalenfield.com</p>
+                    <p>Phone: +91 9876543210</p>
+                    <p>India</p>
+                </div>
+
             </div>
 
-            <div class="col-md-4">
-                <h5>Quick Links</h5>
-                <a href="#">Home</a>
-                <a href="#">Models</a>
-                <a href="#">About Us</a>
-                <a href="#">Contact</a>
-            </div>
-
-            <div class="col-md-4">
-                <h5>Contact</h5>
-                <p>Email: support@royalenfield.com</p>
-                <p>Phone: +91 9876543210</p>
-                <p>India</p>
+            <div class="footer-bottom">
+                © 2026 Royal Enfield Inspired Project | Designed by Ankan Laha
             </div>
 
         </div>
 
-        <div class="footer-bottom">
-            © 2026 Royal Enfield Inspired Project | Designed by Ankan Laha
-        </div>
+    </footer>
 
-    </div>
-</footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 
